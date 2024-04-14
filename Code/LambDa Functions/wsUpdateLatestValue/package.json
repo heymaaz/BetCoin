@@ -1,0 +1,17 @@
+{
+  "name": "wsupdatelatestvalue",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "undici-types": "^5.26.5",
+    "@types/node": "^20.12.4" 
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
