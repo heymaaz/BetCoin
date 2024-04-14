@@ -10,3 +10,16 @@
 ![alt text](<Report/BET-COIN.com Report_page-0008.jpg>)
 ![alt text](<Report/BET-COIN.com Report_page-0009.jpg>)
 ![alt text](<Report/BET-COIN.com Report_page-0010.jpg>)
+
+
+### Compile and Minify for Production
+
+```sh
+cd Code/Frontend/BetCoin-Vite-Tailwind 
+npm install
+npm run build
+cd ../../..
+git add 'Code/Frontend/BetCoin-Vite-Tailwind/dist' -f
+git commit -m "committing dist version now"  
+git subtree push --prefix 'Code/Frontend/BetCoin-Vite-Tailwind/dist' origin gh-pages
+```
