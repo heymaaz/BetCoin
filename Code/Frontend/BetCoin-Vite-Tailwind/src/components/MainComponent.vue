@@ -71,7 +71,8 @@ onMounted(() => {
 
 function initializeWebSocket() {
     if (!socket || socket.readyState === WebSocket.CLOSED) {
-        socket = new WebSocket("wss://0glkdb0fh8.execute-api.us-east-1.amazonaws.com/production");
+        //socket = new WebSocket("wss://0glkdb0fh8.execute-api.us-east-1.amazonaws.com/production");
+        socket = new WebSocket("wss://yg2nt6n6cj.execute-api.eu-west-2.amazonaws.com/production");
     }
     
     socket.onopen = () => {

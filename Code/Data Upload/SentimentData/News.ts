@@ -3,7 +3,7 @@ import NewsAPI from 'newsapi';
 
 //Use AWS SDK to access DynamoDB
 import AWS from 'aws-sdk';
-AWS.config.update({ region: 'us-east-1' });
+AWS.config.update({ region: 'eu-west-2' });
 
 // Initialize the DynamoDB DocumentClient
 const documentClient = new AWS.DynamoDB.DocumentClient();
@@ -66,9 +66,9 @@ async function getNews(crptoName:string, CryptoSymbol:string):Promise<void>{
 }
 
  // Uncomment to run
-  //getNews("Bitcoin", "BTC"); 
-  //getNews("Ethereum", "ETH");
-  //getNews("Litecoin", "LTC");
-  //getNews("Ripple", "XRP");
-  getNews("Solana", "SOL");
+  // getNews("Bitcoin", "BTC"); 
+  // getNews("Ethereum", "ETH");
+  getNews("Litecoin", "LTC");
+  //  getNews("Ripple", "XRP");
+  // getNews("Solana", "SOL");
 

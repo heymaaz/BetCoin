@@ -3,7 +3,7 @@ import axios from 'axios';
 
 //Use AWS SDK to access DynamoDB
 import AWS from 'aws-sdk';
-AWS.config.update({ region: 'us-east-1' });
+AWS.config.update({ region: 'eu-west-2' });
 
 // Initialize the DynamoDB DocumentClient
 const documentClient = new AWS.DynamoDB.DocumentClient();
@@ -31,7 +31,7 @@ async function processData(data: AlphaVantageCrypto, CryptoSymbol: string, marke
         const date = new Date(dt);
         
         //Extract exchange rate
-        const rate = data['Time Series (Digital Currency Daily)'][dt]['4b. close (USD)'];
+        const rate = data['Time Series (Digital Currency Daily)'][dt]['4. close'];
         
         //Log downloaded data
         console.log(`TimeStamp: ${date.getTime()}. ${CryptoSymbol} to ${market}: ${rate}`);
@@ -83,8 +83,8 @@ async function downloadData(symbol: string, market: string) {
     
 }
 
-//downloadData("BTC", "USD");
-//downloadData("ETH", "USD");
-//downloadData("LTC", "USD");
-//downloadData("XRP", "USD");
-downloadData("SOL", "USD");
+// downloadData("BTC", "USD");
+// downloadData("ETH", "USD");
+// downloadData("LTC", "USD");
+downloadData("XRP", "USD");
+// downloadData("SOL", "USD");

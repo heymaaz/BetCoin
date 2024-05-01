@@ -11,7 +11,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 import axios from 'axios';
 //Use AWS SDK to access DynamoDB
 import AWS from 'aws-sdk';
-AWS.config.update({ region: 'us-east-1' });
+AWS.config.update({ region: 'eu-west-2' });
 // Initialize the DynamoDB DocumentClient
 const documentClient = new AWS.DynamoDB.DocumentClient();
 //Module that reads keys from .env file
@@ -26,7 +26,7 @@ function processData(data, CryptoSymbol, market) {
             //Convert data to unix timestamp
             const date = new Date(dt);
             //Extract exchange rate
-            const rate = data['Time Series (Digital Currency Daily)'][dt]['4b. close (USD)'];
+            const rate = data['Time Series (Digital Currency Daily)'][dt]['4. close'];
             //Log downloaded data
             console.log(`TimeStamp: ${date.getTime()}. ${CryptoSymbol} to ${market}: ${rate}`);
             ++itemCount;
@@ -72,8 +72,8 @@ function downloadData(symbol, market) {
         }
     });
 }
-//downloadData("BTC", "USD");
-//downloadData("ETH", "USD");
-//downloadData("LTC", "USD");
-//downloadData("XRP", "USD");
-downloadData("SOL", "USD");
+// downloadData("BTC", "USD");
+// downloadData("ETH", "USD");
+// downloadData("LTC", "USD");
+downloadData("XRP", "USD");
+// downloadData("SOL", "USD");

@@ -11,7 +11,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 import NewsAPI from 'newsapi';
 //Use AWS SDK to access DynamoDB
 import AWS from 'aws-sdk';
-AWS.config.update({ region: 'us-east-1' });
+AWS.config.update({ region: 'eu-west-2' });
 // Initialize the DynamoDB DocumentClient
 const documentClient = new AWS.DynamoDB.DocumentClient();
 //Module that reads keys from .env file
@@ -56,8 +56,8 @@ function getNews(crptoName, CryptoSymbol) {
     });
 }
 // Uncomment to run
-//getNews("Bitcoin", "BTC"); 
-//getNews("Ethereum", "ETH");
-//getNews("Litecoin", "LTC");
-//getNews("Ripple", "XRP");
-getNews("Solana", "SOL");
+// getNews("Bitcoin", "BTC"); 
+// getNews("Ethereum", "ETH");
+getNews("Litecoin", "LTC");
+//  getNews("Ripple", "XRP");
+// getNews("Solana", "SOL");

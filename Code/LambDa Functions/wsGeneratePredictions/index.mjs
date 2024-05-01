@@ -5,7 +5,7 @@ import { getSendMessageToSpecificClientPromises } from './websocket.mjs';
 import { SageMakerRuntimeClient, InvokeEndpointCommand } from "@aws-sdk/client-sagemaker-runtime"; 
 
 //Create SageMakerRuntimeClient
-const client = new SageMakerRuntimeClient({ region: "us-east-1" }); 
+const client = new SageMakerRuntimeClient({ region: "eu-west-2" }); 
 
 export const handler = async (event) => {
     try {
@@ -19,20 +19,22 @@ export const handler = async (event) => {
         const cryptoSymbol = JSON.parse(event.body).data.cryptoSymbol;
         let EndpointName;
         switch(cryptoSymbol){
-          case "BTC" : EndpointName="BitcoinEndpoint1";
+          case "BTC" : EndpointName="BitCoinEndpoint1";
                         break;
           
-          case "ETH" : EndpointName="ETHModel1Endpoint";
+          case "ETH" : EndpointName="EthEndpoint1";
                         break;
           
-          case "LTC" : EndpointName="LTCModel1Endpoint";
+          case "LTC" : EndpointName="ltcendpoint1";
                         break;
           
-          case "SOL" : EndpointName="SOLModel1Endpoint";
+          case "SOL" : EndpointName="SolEndpoint1";
                         break;
           
-          case "XRP" : EndpointName="XRPModel1Endpoint";
+          case "XRP" : EndpointName="XRPEndpoint1";
                         break;
+          default: console.log("Crypto Symbol doesn't match or endpoint doesn't exists");
+                    return;
         }
         const endpointData = {
           "instances":
